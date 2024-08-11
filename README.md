@@ -47,19 +47,19 @@ A web application designed to optimize the operation of a coffee shop. In the we
 
 ## Media materials
 <p align="center">
-    <img src="./readme_assets/1.png" width="300" alt="">
-    <img src="./readme_assets/2.png" width="300" alt="">
-    <img src="./readme_assets/3.png" width="300" alt="">
+    <img src="./readme_assets/1.png" width="30%" alt="">
+    <img src="./readme_assets/2.png" width="30%" alt="">
+    <img src="./readme_assets/3.png" width="30%" alt="">
 </p>
 <p align="center">
-    <img src="./readme_assets/4.png" width="300" alt="">
-    <img src="./readme_assets/5.png" width="300" alt="">
-    <img src="./readme_assets/6.png" width="300" alt="">
+    <img src="./readme_assets/4.png" width="30%" alt="">
+    <img src="./readme_assets/5.png" width="30%" alt="">
+    <img src="./readme_assets/6.png" width="30%" alt="">
 </p>
 <p align="center">
-    <img src="./readme_assets/7.png" width="300" alt="">
-    <img src="./readme_assets/8.png" width="300" alt="">
-    <img src="./readme_assets/9.png" width="300" alt="">
+    <img src="./readme_assets/7.png" width="30%" alt="">
+    <img src="./readme_assets/8.png" width="30%" alt="">
+    <img src="./readme_assets/9.png" width="30%" alt="">
 </p>
 <p align="center">
     <img src="./readme_assets/animation_gif.gif" width="500" alt="">
