@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Добавление шеф повара
+{% endblock %}
+
+
+{% block content %}
+
+<div id="about" name="about">
+    <div class="container">
+        <div class="row white">
+            <h2 class="centered">Добавление шеф-повара</h2>
+            <hr>
+            <div class="col-12">
+                <form method="post" enctype="multipart/form-data" class="text-center">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control" id="chef_name" name="chef_name" placeholder="Имя шеф-повара" type="text" required />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="chef_description" name="chef_description" placeholder="О шеф-поваре" type="text" required />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="chef_image" name="chef_image" type="file" required />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="twitter_link" name="twitter_link" placeholder="Ссылка на Twitter" type="url" required />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="facebook_link" name="facebook_link" placeholder="Ссылка на Facebook" type="url" required />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="linkedin_link" name="linkedin_link" placeholder="Ссылка на LinkedIn" type="url" required />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg" type="submit">Добавить шеф-повара</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

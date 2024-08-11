@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Админ-панель
+{% endblock %}
+
+{% block content %}
+    <div class="container" style="margin-bottom: 200px;">
+        <hr>
+        <h1 class="centered">Админ-панель</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                {% if messages %}
+                    <div class="alert alert-success">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <p>Добро пожаловать в админ-панель. Здесь вы можете управлять содержимым вашего сайта, добавлять новые блюда и шеф-поваров.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li><a href="{% url 'add_special' %}">Добавить блюдо</a></li>
+                    <li><a href="{% url 'add_chef' %}">Добавить шеф-повара</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                $(".alert-success").fadeOut("slow");
+            }, 5000);
+        });
+    </script>
+
+{% endblock %}
+

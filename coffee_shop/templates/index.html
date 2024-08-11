@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<!-- ==== HEADERWRAP ==== -->
+<div id="home-section">
+    <div id="headerwrap" name="home">
+      <header class="clearfix tb"> 
+     <div class="tb-cell text-center">
+         <i class="fa fa-heart-o icon"></i>
+        <h1>Кофе - вызывает любовь</h1>
+        <p>Многое может случиться за чашкой кофе, это здорово</p>
+        <a href="#portfolio" class="btn btn-lg">Сегодняшнее спецпредложение</a> 
+        </div>
+    </header>
+</div>
+    
+    </div>
+    <div class="div-pattern2"></div>
+    <!-- /headerwrap --> 
+    
+    
+    
+    <!-- ==== SERVICES ==== -->
+    <div id="services" name="services">
+      <div class="container">
+        <div class="row">
+            <h2 class="centered">ЧТО МЫ ПРЕДЛАГАЕМ</h2>
+            <hr>
+            <div class="col-lg-8 col-lg-offset-2">
+            <p class="large">У нас Вы найдете атмосферу тепла и уюта, идеально подходящую для отдыха, работы или встреч с друзьями. Наши блюда приготовлены с любовью и вниманием к деталям, чтобы каждый посетитель ощущал неповторимый вкус и удовольствие.</p>
+          </div>
+          <div class="col-lg-4 callout"> <i class="fa fa-coffee fa-3x" aria-hidden="true"></i>
+            <h3>КОФЕ</h3>
+            <p>Насладитесь ароматным и бодрящим кофе высокого качества, приготовленным настоящими профессионалами для истинных ценителей кофейной культуры.</p>
+        </div>
+          <div class="col-lg-4 callout"> <i class="fa fa-pie-chart fa-3x" aria-hidden="true"></i>
+            <h3>ПИРОГИ</h3>
+            <p>Погрузитесь в мир нежных и ароматных пирогов, испеченных с любовью и творчеством наших кондитеров, чтобы каждый кусочек приносил вам незабываемое удовольствие.</p>
+        </div>
+          <div class="col-lg-4 callout"> <i class="fa fa-birthday-cake fa-3x" aria-hidden="true"></i>
+            <h3>ТОРТЫ</h3>
+            <p>Насладитесь нежными и вкусными десертами, созданными с любовью и творчеством наших кондитеров, которые подарят вам незабываемое кулинарное удовольствие.</p>
+        </div>
+        </div>
+        <!-- row --> 
+      </div>
+    </div>
+    <!-- container --> 
+        <div class="div-pattern"></div>
+    <!-- ==== ABOUT ==== -->
+    <div id="about" name="about">
+      <div class="container">
+        <div class="row white">
+            <h2 class="centered">Наш магазин</h2>
+          <hr>
+          <div class="col-md-6"> <img class="img-responsive" src="{% static 'img/about/about1.jpg' %}" align=""> </div>
+          <div class="col-md-6">
+            <h3>Кто мы</h3>
+            <p>Мы - уютное кофейное заведение, где каждый чашечка кофе становится неповторимым ритуалом, а каждый клиент - частью нашей дружной кофейной семьи. У нас вы найдете атмосферу тепла и уюта, идеально подходящую для отдыха, работы или встреч с друзьями.<p>
+            <h3>Почему выбрали нас?</h3>
+            <p>Мы гордимся свежеобжаренными зернами высочайшего качества и мастерством наших бариста, которые с любовью приготовят для вас настоящий кофейный шедевр. Наше заведение - это не просто место, где можно выпить кофе, это настоящий оазис для ценителей ароматного напитка, где каждый посетитель может насладиться истинным вкусом кофе и отличным сервисом.</p>
+          </div>
+        </div>
+        <!-- row --> 
+      </div>
+    </div>
+    <!-- container --> 
+    
+    <!-- ==== PORTFOLIO ==== -->
+    <div id="portfolio" name="portfolio">
+        <div class="container">
+        <div class="row">
+          <h2 class="centered">Что особенного</h2>
+          <hr>
+          <div class="col-lg-8 col-lg-offset-2 centered">
+              <p class="large">Особые блюда, которые зададут настроение на весь день!</p>
+            </div>
+        </div>
+        <!-- /row -->
+        <div class="container">
+          <div class="row"> 
+            
+              {% for special in all_special %}    
+              <div class="col-md-4 ">
+                <div class="grid overlay">
+                    <figure>
+                        <img class="img-responsive" src="{{ special.special_image.url }}" alt="ошибочка, картинка не подгружается :(">
+                        <figcaption>
+                            <h5>{{ special.special_name }}</h5>
+                            <a data-toggle="modal" href="#myModal{{ special.id }}" class="btn btn-default">Читать подробнее</a>
+                        </figcaption>
+                        <!-- /figcaption --> 
+                    </figure>
+                    <!-- /figure --> 
+                </div>
+                <!-- /grid-overlay --> 
+            </div> 
+        
+            <div class="modal fade" id="myModal{{ special.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel{{ special.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel{{ special.id }}">{{ special.special_name }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p><img class="img-responsive" src="{{ special.special_image.url }}" alt="ошибочка, картинка не подгружается :("></p>
+                            <p>{{ special.special_description }}</p> 
+                        </div> 
+                    </div>
+                    <!-- /.modal-content --> 
+                </div>
+                <!-- /.modal-dialog --> 
+            </div>
+            <!-- /.modal --> 
+            {% endfor %}
+            <!-- /col --> 
+          </div>
+          <!-- /row --> 
+        </div>
+        <!-- /row --> 
+      </div>
+    </div>
+    <!-- /container --> 
+    
+    <!-- ==== TEAM MEMBERS ==== -->
+    <div id="team" name="team">
+        <div class="container">
+            <div class="row centered">
+                <h2 class="centered">Познакомьтесь с нашими шеф-поварами</h2>
+                <hr>
+                <div class="col-lg-8 col-lg-offset-2 centered">
+            <p>Познакомьтесь с нашими талантливыми шеф-поварами, чье мастерство и страсть к кулинарии делают каждое блюдо уникальным шедевром.</p>
+            <br/>
+          </div>
+    
+            {% for chef in all_chef %}
+            <div class="col-lg-3 centered">
+                <img class="img img-circle" src="{{ chef.chef_image.url }}" height="120px" width="120px" alt="">
+                <h4><strong>{{ chef.chef_name }}</strong></h4>
+                <p>{{ chef.chef_description }}</p> 
+                <a href="{{ chef.twitter_link }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="{{ chef.facebook_link }}" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="{{ chef.linkedin_link }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+      <!-- row --> 
+    </div>
+    <!-- container --> 
+    
+    
+    
+    <!-- ==== CONTACT ==== -->
+    <div id="contact" name="contact">
+      <div class="container">
+          <div class="row">
+          <h2 class="centered">Связаться с нами</h2>
+          <hr>
+        
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+          <strong>Пожалуйста, дайте нам свой отзыв!</strong>
+            <p>Мы ценим ваше мнение! Пожалуйста, поделитесь с нами вашим отзывом — это поможет нам стать ещё лучше.</p>
+				<div class="row">
+					<div class="col-md-12">
+						{% if messages %}
+							<div class="alert alert-success">
+								{% for message in messages %}
+									{{ message }}
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+				</div>
+				<form id="contact" method="post" class="form">
+					{% csrf_token %}
+					<div class="row">
+						<div class="col-md-12 form-group">
+							<input class="form-control" id="first_name" name="first_name" placeholder="Имя" type="text" required />
+						</div>
+						<div class="col-md-12 form-group">
+							<input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+						</div>
+						<div class="col-md-12 form-group">
+							<textarea class="form-control" id="message" name="message" placeholder="Я хочу связаться с Вами..." rows="5"></textarea>
+							<button class="btn btn-lg pull-left" type="submit">Отправить сообщение</button>
+						</div>
+					</div>
+				</form>
+            <!-- form --> 
+          </div>
+          <div class="col-md-5">
+                 
+              <i class="fa fa-map-marker fa-2x"></i>
+            <strong>Coffee Shop</strong>
+            <p>г. Москва<br>
+              ул. Прекрасная, д. 14</p>
+          
+          <br/> 
+          <i class="fa fa-envelope-o fa-2x"></i>
+            <p>coffee_shop@gmail.com</p>
+           
+            <br/> 
+            <i class="fa fa-phone fa-2x"></i>
+            <p> +1 235 123 1234</p>
+           
+          </div>
+        </div>
+        <!-- row --> 
+        
+      </div>
+    </div>
+    <!-- container -->
+
+{% endblock %}
