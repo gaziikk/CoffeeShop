@@ -62,5 +62,5 @@ A web application designed to optimize the operation of a coffee shop. In the we
     <img src="./readme_assets/9.png" width="300" alt="">
 </p>
 <p align="center">
-    <img src="./readme_assets/animation_gif.gif" width="915" alt="">
+    <img src="./readme_assets/animation_gif.gif" width="500" alt="">
 </p>
